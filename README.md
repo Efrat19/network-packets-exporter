@@ -13,7 +13,7 @@ containers:
 - <your main container>
 
 - name: network-metrics-sidecar
-  image: efrat19/packets-exporter:stable
+  image: efrat19/packets-exporter:stable-v1.0.1
 ```
 
 Adding a Service:
@@ -35,7 +35,7 @@ spec:
     <your_app_labels>
   type: ClusterIP
 ```
-Adding the ServiceMonitor:
+Adding the ServiceMonitor (for Prometheus-operator controlled systems):
 
 ```yaml
 apiVersion: monitoring.coreos.com/v1
@@ -58,25 +58,9 @@ spec:
       name: network-monitoring
 ```
 
-## Exported Metrics
-
-
-
 ## Grafana Dashboard
 
 Still Under development, Hopefully not for long :sleeping: 
 
-## Helm Chart
-
-sidecar
-service
-servicemonitor
-
-
-Coming soon...
-
-## RoadMap
-
-- [ ] Tests
 
 
