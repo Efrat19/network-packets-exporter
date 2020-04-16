@@ -11,15 +11,50 @@ containers:
 - <your main container>
 
 - name: network-metrics-sidecar
-  image: efrat19/packets-exporter:23b366679e824e1b2a794ea5b7efdb3778724b64
-#  env:
-#  - name: METRICS_PORT
-#    value: "9717"
-#  - name: IFACE
-#    value: eth0
+  image: efrat19/packets-exporter:stable
 ```
 
+Adding a Service:
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: network-monitoring
+  name: network-monitoring
+  namespace: <your_namespace>
+spec:
+  ports:
+  - name: http-metrics
+    port: 9717
+    protocol: TCP
+    targetPort: 9717
+  selector:
+    <your_app_labels>
+  type: ClusterIP
+```
+Adding the ServiceMonitor:
 
+```yaml
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: network-monitoring
+  namespace: monitoring
+  labels:
+    <your_service_monitor_selector_labels>
+spec:
+  endpoints:
+  - path: /metrics
+    port: http-metrics
+    interval: 10s
+  namespaceSelector:
+    matchNames:
+      - <your_namespace>
+  selector:
+    matchLabels:
+      name: network-monitoring
+```
 
 ## Exported Metrics
 
