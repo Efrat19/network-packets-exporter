@@ -8,7 +8,7 @@ You are supposed to attach this image to a pod as a sidecar, and collect the exp
 
 ## Grafana Dashboard
 
-Still Under development, Hopefully not for long :hugging_face: 
+Still Under development, Hopefully not for long :sleeping: 
 
 ## Helm Chart
 
