@@ -4,7 +4,7 @@ WORKDIR /go/src/app
 COPY . .
 
 RUN apt-get update
-RUN apt-get install libpcap-dev
+RUN apt-get install -y libpcap-dev
 
 RUN go get -d -v ./...
 RUN go build .
