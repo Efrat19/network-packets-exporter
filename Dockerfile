@@ -4,7 +4,7 @@ WORKDIR /go/src/app
 COPY . .
 
 RUN go get -d -v ./...
-#RUN go install -v ./...
+RUN go build .
 
 # Interface to read packets from
 ENV IFACE=eth0
@@ -12,6 +12,6 @@ ENV IFACE=eth0
 # Exposed metrics port
 ENV METRICS_PORT=9717
 
-CMD ["go","run","*.go"]
+CMD ["app"]
 
 EXPOSE $METRICS_PORT
