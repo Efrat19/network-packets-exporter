@@ -27,7 +27,7 @@ containers:
 
 ## Grafana Dashboard
 
-Still Under development, Hopefully not for long :hugging_face: 
+Still Under development, Hopefully not for long :sleeping: 
 
 ## Helm Chart
 
