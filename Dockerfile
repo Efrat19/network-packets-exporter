@@ -15,6 +15,6 @@ ENV IFACE=eth0
 # Exposed metrics port
 ENV METRICS_PORT=9717
 
-CMD ["app"]
+CMD ["./app"]
 
 EXPOSE $METRICS_PORT
