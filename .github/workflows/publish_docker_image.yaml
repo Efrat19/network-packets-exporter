@@ -11,7 +11,6 @@ jobs:
           name: efrat19/packets-exporter
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          context: packets-exporter
           tags: "amd64-latest,amd64-${{ github.sha }}"
   build-arm:
     runs-on: self-hosted
@@ -23,7 +22,6 @@ jobs:
           name: efrat19/packets-exporter
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          context: packets-exporter
           tags: "arm-latest,arm-${{ github.sha }}"
   push-manifest:
     runs-on: [ubuntu-latest]
