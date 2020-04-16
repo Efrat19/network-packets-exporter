@@ -3,6 +3,7 @@ FROM golang:1.13
 WORKDIR /go/src/app
 COPY . .
 
+RUN apt-get update
 RUN apt-get install libpcap-dev
 
 RUN go get -d -v ./...
