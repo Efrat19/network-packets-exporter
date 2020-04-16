@@ -3,7 +3,7 @@
 ![Publish Packets Exporter](https://github.com/Efrat19/network-packets-exporter/workflows/Publish%20Packets%20Exporter/badge.svg)
 
 ## Usage
-The Network Packets Exporter captures all network packets and stream them out as HTTP metrics, with useful labels like source/destination IP, port, and network protocol.
+The Network Packets Exporter uses google [gopacket library](https://github.com/google/gopacket) to capture all network packets and stream them out as prometheus-readable HTTP metrics, with useful labels like source/destination IP, port, and network protocol.
 Great for debugging and collecting network statistics.
 
 You are supposed to attach this image to a pod as a sidecar, and collect the exported metrics at the `METRICS_PORT`, which defaults to `9717`:
