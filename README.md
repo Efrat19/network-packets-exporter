@@ -1,5 +1,7 @@
 # network-packets-exporter 
 
+![Publish Packets Exporter](https://github.com/Efrat19/network-packets-exporter/workflows/Publish%20Packets%20Exporter/badge.svg)
+
 ## Usage
 The Network Packets Exporter captures all network packets and stream them out as HTTP metrics, with useful labels like source/destination IP, port, and network protocol.
 Great for debugging and collecting network statistics.
