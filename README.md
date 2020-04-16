@@ -1,5 +1,4 @@
 # network-packets-exporter 
-## CURRENTLY UNDER HEAVY DEVELOPMENT
 
 ## Usage
 The Network Packets Exporter captures all network packets and stream them out as HTTP metrics, with useful labels like source/destination IP, port, and network protocol.
