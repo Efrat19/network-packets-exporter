@@ -42,11 +42,12 @@ func init(){
 }
 
 func startHTTPserver() {
+	port := os.Getenv("METRICS_PORT")
 	http.Handle("/", Adapt(http.FileServer(http.Dir("./static")), logAccess()))
 	http.Handle("/metrics", Adapt(promhttp.Handler(), logAccess()))
-	fmt.Fprintln(os.Stderr, "Starting server at port 9717")
+	fmt.Fprintln(os.Stderr, "Starting server at port " + port)
 
 	go func() {
-		log.Fatal(http.ListenAndServe(":9717", nil))
+		log.Fatal(http.ListenAndServe(":" + port, nil))
 	}()
 }

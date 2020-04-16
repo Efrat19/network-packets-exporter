@@ -15,13 +15,13 @@ import (
 	"github.com/google/gopacket/pcap"
 )
 
-var iface = flag.String("i", "en0", "Interface to read packets from")
 var fname = flag.String("r", "", "Filename to read from, overrides -i")
 var snaplen = flag.Int("s", 65536, "Snap length (number of bytes max to read per packet")
 var tstype = flag.String("timestamp_type", "", "Type of timestamps to use")
 var promisc = flag.Bool("promisc", true, "Set promiscuous mode")
 
 func capture() {
+	iface := os.Getenv("IFACE")
 	defer util.Run()()
 	var handle *pcap.Handle
 	var err error
@@ -33,7 +33,7 @@ func capture() {
 		// This is a little complicated because we want to allow all possible options
 		// for creating the packet capture handle... instead of all this you can
 		// just call pcap.OpenLive if you want a simple handle.
-		inactive, err := pcap.NewInactiveHandle(*iface)
+		inactive, err := pcap.NewInactiveHandle(iface)
 		if err != nil {
 			log.Fatalf("could not create: %v", err)
 		}
