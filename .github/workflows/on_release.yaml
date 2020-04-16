@@ -7,6 +7,6 @@ jobs:
       - name: setup docker(Without version)
         uses: docker-practice/actions-setup-docker@master
       - run: |
-          docker manifest create efrat19/packets-exporter:stable efrat19/packets-exporter:arm-${{ github.sha }} efrat19/packets-exporter:amd64-${{ github.sha }}
+          docker manifest create efrat19/packets-exporter:stable-{{ github.tag }} efrat19/packets-exporter:arm-${{ github.sha }} efrat19/packets-exporter:amd64-${{ github.sha }}
           docker login -u ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }}
-          docker manifest push efrat19/packets-exporter:stable
+          docker manifest push efrat19/packets-exporter:stable-{{ github.tag }}
