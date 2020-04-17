@@ -13,7 +13,7 @@ containers:
 - <your main container>
 
 - name: network-metrics-sidecar
-  image: efrat19/packets-exporter:stable-v1.0.2
+  image: efrat19/packets-exporter:stable
 ```
 
 Adding a Service:
