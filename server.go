@@ -43,6 +43,10 @@ func init(){
 
 func startHTTPserver() {
 	port := os.Getenv("METRICS_PORT")
+	if port == "" {
+		fmt.Fprintln(os.Stderr, "no METRICS_PORT env specified, defaulting to 9717")
+		port = "9717"
+	}
 	http.Handle("/", Adapt(http.FileServer(http.Dir("./static")), logAccess()))
 	http.Handle("/metrics", Adapt(promhttp.Handler(), logAccess()))
 	fmt.Fprintln(os.Stderr, "Starting server at port " + port)
