@@ -1,7 +1,7 @@
 FROM golang:1.13
 
 WORKDIR /go/src/app
-COPY .. .
+COPY . .
 
 RUN apt-get update
 RUN apt-get install -y libpcap-dev
