@@ -34,9 +34,7 @@ jobs:
       - run: |
           docker manifest create efrat19/packets-exporter:latest efrat19/packets-exporter:arm-latest efrat19/packets-exporter:amd64-latest 
           docker manifest create efrat19/packets-exporter:${{ github.sha }} efrat19/packets-exporter:arm-${{ github.sha }} efrat19/packets-exporter:amd64-${{ github.sha }}
-          docker manifest create efrat19/packets-exporter:${{ github.ref }} efrat19/packets-exporter:arm-${{ github.sha }} efrat19/packets-exporter:amd64-${{ github.sha }}
           docker login -u ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }}
           docker manifest push efrat19/packets-exporter:latest
           docker manifest push efrat19/packets-exporter:${{ github.sha }}
-          docker push efrat19/packets-exporter:${{ github.ref }}
 
