@@ -1,4 +1,5 @@
-name: Publish Stable Packets Exporter
+
+name: Publish Packets Exporter
 on: [release]
 jobs:
   push-manifest:
