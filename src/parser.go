@@ -7,7 +7,7 @@
 // Package dumpcommand implements a run function for pfdump and pcapdump
 // with many similar flags/features to tcpdump.  This code is split out seperate
 // from data sources (pcap/pfring) so it can be used by both.
-package main
+package src
 
 import (
 	"flag"

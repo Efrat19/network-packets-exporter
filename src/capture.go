@@ -1,6 +1,6 @@
 // https://github.com/google/gopacket/blob/master/examples/pcapdump/main.go
 
-package main
+package src
 
 import (
 	"flag"
