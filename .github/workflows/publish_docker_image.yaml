@@ -1,5 +1,5 @@
 name: Publish Packets Exporter
-on: [push,release]
+on: [push]
 jobs:
   build-amd64:
     runs-on: ubuntu-latest
