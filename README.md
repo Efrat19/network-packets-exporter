@@ -57,6 +57,14 @@ spec:
     matchLabels:
       name: network-monitoring
 ```
+## Exported Metrics
+
+Only 1 metric is exported: `network_packets_total` of type counter vector, carrying the following labels:
+- srcIP
+- dstIP
+- srcPort
+- dstPort
+- protocol
 
 ## Grafana Dashboard
 
